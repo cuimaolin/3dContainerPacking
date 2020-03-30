@@ -8,12 +8,8 @@ from model import linear_model, randomForest_model, network_model
 
 # 简单参数设置
 parser = argparse.ArgumentParser()
-parser.add_argument('-t', '--test_size', default=0.1, type=float, help='how much percentage of the test set')
-parser.add_argument('-m', '--model_name', default=0, type=int,\
-                   help='what model you want to choose;\
-                         0 for linear model;\
-                         1 for random forest model;\
-                         2 for neural network model')
+parser.add_argument('--test_size', default=0.1, type=float, help='how much percentages of the test set')
+parser.add_argument('--model', default='MLP', type=str, help='what model you want to choose')
 args = parser.parse_args()
 
 if __name__ == "__main__":
@@ -30,13 +26,13 @@ if __name__ == "__main__":
    '''
    训练模型并得到预测结果
    '''
-   if args.model_name == 0:
+   if args.model == 'linear':
       print('using linear model')
       pred_y = linear_model(train_x, test_x, train_y, test_y)
-   if args.model_name == 1:
+   if args.model == 'randomForest':
       print('using random forest model')
       pred_y = randomForest_model(train_x, test_x, train_y, test_y)
-   if args.model_name == 2:
+   if args.model == 'MLP':
       print('using neural network model')
       pred_y = network_model(train_x, test_x, train_y, test_y)
    '''
