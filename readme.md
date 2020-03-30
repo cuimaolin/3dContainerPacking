@@ -10,4 +10,4 @@ python main.py -t 0.1 -m 1
 
 where '-t' represents the portion of the test set in the entire dataset, '-m' represents the model you want to train:
 
-You set 1 for linear model, 2 for random forest model and 3 for neural network model.
+You can set 1 for linear model, 2 for random forest model and 3 for neural network model.
