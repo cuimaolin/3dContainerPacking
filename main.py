@@ -8,7 +8,7 @@ from model import linear_model, randomForest_model, network_model
 
 # 简单参数设置
 parser = argparse.ArgumentParser()
-parser.add_argument('-p', '--test_size', default=0.1, type=float, help='how much percentage of the test set')
+parser.add_argument('-t', '--test_size', default=0.1, type=float, help='how much percentage of the test set')
 parser.add_argument('-m', '--model_name', default=0, type=int,\
                    help='what model you want to choose;\
                          0 for linear model;\
@@ -20,8 +20,8 @@ if __name__ == "__main__":
    '''
    得到特征
    '''
-   data = getFeaure(ln_root='./data', ln_ult='./summary.xlsx')    # 原始数据
-   data_afterdispose = getFeaure(ln_root='./data-afterdispose', ln_ult='./SCLPRes.xlsx')  # 合成数据
+   data = getFeaure(ln_root='./data/BR', ln_ult='./data/BR.xlsx')    # 原始数据
+   data_afterdispose = getFeaure(ln_root='./data/BR_afterdispose', ln_ult='./data/BR_afterdispose.xlsx')  # 合成数据
    data = pd.concat([data, data_afterdispose], axis=0)   # 将两种数据合并
    '''
    预处理
