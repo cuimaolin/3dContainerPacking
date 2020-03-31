@@ -4,12 +4,14 @@
 
 **You can run the following scripts to reproduce results for our paper**
 
-```python
+```sh
 # Linear Regression 
-python main.py --model Linear
+$ python main.py --model Linear
+
 # Random Forest Regressor
-python main.py --model randomForest
+$ python main.py --model randomForest
+
 # Nerual Network
-python main.py --model MLP
+$ python main.py --model MLP
 ```
 
