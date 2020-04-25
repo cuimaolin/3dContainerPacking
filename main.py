@@ -4,7 +4,7 @@ from getFeature import getFeaure
 from preprocessing import data_preprocessing
 from sklearn.metrics import mean_squared_error
 from math import sqrt
-from model import linear_model, randomForest_model, network_model
+from model import linear_model, randomForest_model, network_model, lightgbm_model
 
 # 简单参数设置
 parser = argparse.ArgumentParser()
@@ -28,13 +28,17 @@ if __name__ == "__main__":
    '''
    if args.model == 'linear':
       print('using linear model')
-      pred_y = linear_model(train_x, test_x, train_y, test_y)
+      pred_y = linear_model(train_x, train_y, test_x)
    if args.model == 'randomForest':
       print('using random forest model')
-      pred_y = randomForest_model(train_x, test_x, train_y, test_y)
+      pred_y = randomForest_model(train_x, train_y, test_x)
    if args.model == 'MLP':
       print('using neural network model')
-      pred_y = network_model(train_x, test_x, train_y, test_y)
+      pred_y = network_model(train_x, train_y, test_x)
+   if args.model == 'lightgbm':
+      print('using lightgbm model')
+      pred_y = lightgbm_model(train_x, train_y, test_x)
+
    '''
    得到mse均方误差
    '''

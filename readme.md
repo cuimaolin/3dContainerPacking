@@ -13,5 +13,8 @@ $ python main.py --model randomForest
 
 # Nerual Network
 $ python main.py --model MLP
+
+# lightgbm
+$ python main.py --model lightgbm
 ```
 
